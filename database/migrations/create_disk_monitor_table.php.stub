@@ -8,8 +8,10 @@ class CreateDiskMonitorTable extends Migration
 {
     public function up()
     {
-        Schema::create('laravel-disk-monitor_table', function (Blueprint $table) {
+        Schema::create('disk_monitor_entries', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('disk_name');
+            $table->string('file_count');
 
             // add fields
 

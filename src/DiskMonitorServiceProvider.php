@@ -11,14 +11,14 @@ class DiskMonitorServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/laravel-disk-monitor.php' => config_path('laravel-disk-monitor.php'),
+                __DIR__ . '/../config/disk-monitor.php' => config_path('disk-monitor.php'),
             ], 'config');
 
             $this->publishes([
-                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/laravel-disk-monitor'),
+                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/disk-monitor'),
             ], 'views');
 
-            $migrationFileName = 'create_laravel_disk_monitor_table.php';
+            $migrationFileName = 'create_disk_monitor_table.php';
             if (! $this->migrationFileExists($migrationFileName)) {
                 $this->publishes([
                     __DIR__ . "/../database/migrations/{$migrationFileName}.stub" => database_path('migrations/' . date('Y_m_d_His', time()) . '_' . $migrationFileName),
@@ -30,12 +30,12 @@ class DiskMonitorServiceProvider extends ServiceProvider
             ]);
         }
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-disk-monitor');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'disk-monitor');
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/laravel-disk-monitor.php', 'laravel-disk-monitor');
+        $this->mergeConfigFrom(__DIR__ . '/../config/disk-monitor.php', 'disk-monitor');
     }
 
     public static function migrationFileExists(string $migrationFileName): bool
