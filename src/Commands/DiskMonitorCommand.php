@@ -20,7 +20,7 @@ class DiskMonitorCommand extends Command
         $filecount = count(Storage::disk($diskName)->allFiles());
         DiskMonitorEntry::create([
             'disk_name' => config('disk-monitor.disk_name'),
-            'file_count' => $filecount
+            'file_count' => $filecount,
         ]);
 
         $this->comment('All Done!');
