@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_name/:package_name",
-    "description": ":package_description",
+    "name": "websolutionsz/laravel-disk-monitor",
+    "description": "Laravel Disk Monitor",
     "keywords": [
-        ":vendor_name",
-        ":package_name"
+        "websolutionsz",
+        "laravel-disk-monitor"
     ],
-    "homepage": "https://github.com/:vendor_name/:package_name",
+    "homepage": "https://github.com/websolutionsz/laravel-disk-monitor",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": "https://spatie.be",
+            "name": "Mansi Prajapati",
+            "email": "mansi@conceptualize.ae",
+            "homepage": "https://github.com/websolutionsz/laravel-disk-monitor",
             "role": "Developer"
         }
     ],
@@ -26,13 +26,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src",
-            "Spatie\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Websolutionsz\\DiskMonitor\\": "src",
+            "Websolutionsz\\DiskMonitor\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Websolutionsz\\DiskMonitor\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -46,23 +46,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
-            }
+                "Websolutionsz\\DiskMonitor\\DiskMonitorServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "funding": [
-        {
-            "type": "github",
-            "url": "https://github.com/sponsors/spatie"
-        },
-        {
-            "type": "other",
-            "url": "https://spatie.be/open-source/support-us"
-        }
-    ]
+    "prefer-stable": true
 }
