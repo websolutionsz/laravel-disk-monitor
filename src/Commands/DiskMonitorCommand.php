@@ -16,7 +16,7 @@ class DiskMonitorCommand extends Command
     {
         $this->comment('Recording Metrics...');
 
-        collect(config('disk-monitor.disk_name'))->each(fn(string $diskName) => $this->recordMetrix($diskName));
+        collect(config('disk-monitor.disk_name'))->each(fn (string $diskName) => $this->recordMetrix($diskName));
         $this->comment('All Done!');
     }
 
@@ -26,7 +26,7 @@ class DiskMonitorCommand extends Command
         $filecount = count(Storage::disk($diskName)->allFiles());
         DiskMonitorEntry::create([
             'disk_name' => $diskName,
-            'file_count' => $filecount
+            'file_count' => $filecount,
         ]);
     }
 }
