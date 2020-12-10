@@ -38,6 +38,8 @@ class DiskMonitorServiceProvider extends ServiceProvider
             });
         });
 
+        Route::diskMonitor('disk-monitor');
+
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'disk-monitor');
     }
 
