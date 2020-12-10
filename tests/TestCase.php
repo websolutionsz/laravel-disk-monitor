@@ -2,9 +2,9 @@
 
 namespace Websolutionsz\DiskMonitor\Tests;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Websolutionsz\DiskMonitor\DiskMonitorServiceProvider;
 
 class TestCase extends Orchestra
