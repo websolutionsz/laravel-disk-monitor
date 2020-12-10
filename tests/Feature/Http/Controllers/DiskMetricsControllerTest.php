@@ -9,7 +9,6 @@ class DiskMetricsControllerTest extends TestCase
     /** @test */
     public function test_disk_entries()
     {
-
         $this->get('disk-monitor')->assertOk();
     }
 }

@@ -6,9 +6,10 @@ use Websolutionsz\DiskMonitor\Models\DiskMonitorEntry;
 
 class DiskMetricsController
 {
-    public function index(){
+    public function index()
+    {
         $entries = DiskMonitorEntry::latest()->get();
 
-        return view('disk-monitor::entrie',compact('entries'));
+        return view('disk-monitor::entrie', compact('entries'));
     }
 }
