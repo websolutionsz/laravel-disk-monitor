@@ -31,8 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Websolutionsz\\DiskMonitor\\": "src",
-            "Websolutionsz\\DiskMonitor\\Database\\Factories\\": "database/factories"
+            "Websolutionsz\\DiskMonitor\\": "src"
         }
     },
     "autoload-dev": {
