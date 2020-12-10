@@ -2,8 +2,10 @@
 
 namespace Websolutionsz\DiskMonitor;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Websolutionsz\DiskMonitor\Commands\DiskMonitorCommand;
+use Websolutionsz\DiskMonitor\Http\Controllers\DiskMetricsController;
 
 class DiskMonitorServiceProvider extends ServiceProvider
 {
@@ -29,6 +31,12 @@ class DiskMonitorServiceProvider extends ServiceProvider
                 DiskMonitorCommand::class,
             ]);
         }
+
+        Route::macro('diskMonitor', function (string $prefix) {
+            Route::prefix($prefix)->group(function () {
+                Route::get('/', [DiskMetricsController::class,'index']);
+            });
+        });
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'disk-monitor');
     }

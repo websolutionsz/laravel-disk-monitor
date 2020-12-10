@@ -16,13 +16,17 @@ class DiskMonitorCommand extends Command
     {
         $this->comment('Recording Metrics...');
 
-        $diskName = config('disk-monitor.disk_name');
+        collect(config('disk-monitor.disk_name'))->each(fn(string $diskName) => $this->recordMetrix($diskName));
+        $this->comment('All Done!');
+    }
+
+    protected function recordMetrix(String $diskName)
+    {
+        $this->info('Recording Metrics of disk `{$diskName}` ....');
         $filecount = count(Storage::disk($diskName)->allFiles());
         DiskMonitorEntry::create([
-            'disk_name' => config('disk-monitor.disk_name'),
+            'disk_name' => $diskName,
             'file_count' => $filecount
         ]);
-
-        $this->comment('All Done!');
     }
 }
